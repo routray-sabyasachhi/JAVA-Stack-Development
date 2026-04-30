@@ -14,9 +14,14 @@
   flex-wrap: wrap;
 }
 
-.site-logo {
-  margin: 0;
-  font-size: 1.5rem;
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand-link img {
+  display: block;
+  border-radius: 6px;
 }
 
 .site-nav {
