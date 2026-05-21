@@ -1,0 +1,43 @@
+* {
+  font-weight: 40px;
+  color: green;
+  box-sizing: border-box;
+}
+.hero {
+  background: linear-gradient(270deg,yellow,cyan,magenta);
+  background-size: 800% 800%;
+  animation: gradientMove 8s ease infinite; 
+}
+#title {
+  background: radial-gradient(circle, yellow, orange, red);
+  margin: 0;
+  padding: 20px;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 22px;
+  font-style: oblique;
+  border-radius: 15px;
+  text-align: center;
+  color: rgb(47, 0, 255);
+}
+.alert-text {
+  color: red;
+}
+.alert-text .tc {
+ color: grey;
+}
+.linktc {
+  color: greenyellow;
+  text-decoration: none;
+  display: inline-flex;
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
