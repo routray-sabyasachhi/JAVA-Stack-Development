@@ -6,102 +6,186 @@
     <title>Form | Basics</title>
     <style>
         body {
+            margin: 0;
+            font-family: Arial, sans-serif;
             background-color: rgb(150, 185, 200);
-        }        
-        h1{
-            color: rgb(5, 4, 5);
         }
+
+        h1 {
+            color: rgb(5, 4, 5);
+            margin-top: 0;
+        }
+
         .RegisterForm {
-            border: 2px solid black;
+            max-width: 520px;
+            margin: 40px auto;
+            padding: 24px 28px;
+            border: 2px solid rgb(98, 146, 134);
             border-radius: 15px;
             background-color: aliceblue;
-            text-align: center;
-            display: flexbox;
-            border-color: rgb(98, 146, 134);
-            padding: 20px 15px 20px 18px;
         }
-        .textbox {
-            background-color: white;
+
+        .form-group {
+            margin-bottom: 14px;
+        }
+
+        label {
+            display: inline-block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .textbox,
+        .pass {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 8px;
+            border: 1px solid rgb(98, 146, 134);
             border-radius: 8px;
-            color:red;
-            padding:3px;
+            background-color: white;
+            color: rgb(40, 40, 40);
+        }
+
+        .radiobtn,
+        .check {
+            margin-right: 5px;
+        }
+
+        .radio-group label,
+        .terms label {
+            font-weight: normal;
+            margin-right: 12px;
+        }
+
+        .tc {
+            color: rgb(8, 91, 120);
+            text-decoration: none;
+        }
+
+        .tc:hover {
+            text-decoration: underline;
+        }
+
+        .button-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .reset,
+        .submit {
+            font-size: 15px;
+            border-radius: 8px;
             margin: 3px;
-            }
-            .radiobtn {
-                background-color: white;
-            }            
-            .pass {
-                background-color: white;
-                border-radius: 8px;
-                padding: 3px; 
-                margin: 3px;     
-            }
-            .tc {
-                text-decoration: none;
-            }
-            .reset{
-                font-size: 15px;
-                border-radius: 8px;
-                margin: 3px;
-                padding: 8px 10px 8px 10px;
-                border-style: dashed;
-            }
-            .reset:hover {
-                background-color: rgb(223, 128, 128);
-            }
-            .submit{
-                font-size: 15px;
-                border-radius: 8px;
-                margin: 3px;
-                padding: 8px 10px 8px 10px;
-                border-style: dashed;
-            }
-            .submit:hover {
-                background-color: rgb(126, 225, 126);
-            }
-            .passwordtc {
-                margin:20px;
-                text-align: left;
-            }
-            span {
-                font-weight: bold;
-                color: rgb(1, 84, 1);
-            }
-            .passwordtc ul {
-                list-style: none;
-            }
-            .passwordtc ul {
-                margin:10px 0;
-                color:#444;
-                font-size: 15px;
-            }
+            padding: 8px 12px;
+            border: 1px dashed rgb(60, 60, 60);
+            cursor: pointer;
+        }
+
+        .reset:hover {
+            background-color: rgb(223, 128, 128);
+        }
+
+        .submit:hover {
+            background-color: rgb(126, 225, 126);
+        }
+
+        .passwordtc {
+            margin-top: 24px;
+            text-align: left;
+        }
+
+        .passwordtc h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .passwordtc ul {
+            margin: 10px 0;
+            padding-left: 0;
+            color: #444;
+            font-size: 15px;
+            list-style: none;
+        }
+
+        .passwordtc li {
+            margin-bottom: 6px;
+        }
+
+        .passwordtc span {
+            font-weight: bold;
+            color: rgb(1, 84, 1);
+        }
     </style>
 </head>
 <body>
-    <br /> <br />
-    <form class="RegisterForm">
-        <h1>Registration Form</h1><br />
-        Enter Your Name: <input type="text" label="Enter Your Name" class="textbox" id="name" placeholder="John"> <br/>
-        Enter your Mail: <input type="mail" class="textbox" id="email" placeholder="John@mail.com"><br/>
-        Enter your mobile No. : <input type="text" class="textbox" id="mobile"><br/>
-        Choose your Gender : <input type="radio" name="gender" label="Male" class="radiobtn">Male <input type="radio" name="gender" label="Female" class="radiobtn">Female<br/>
-        Enter Your Password : <input type="password" class="pass" id="pass" minlength="8" maxlength="12" required><br/>
-        Re-Enter Your Password : <input type="password" class="pass" id="repass" minlengh="8" maxlength="12" required><br>
-         <br/><br/>
-        <input type="checkbox" class="check" id="tc" label="terms and conditions"checked>Accept Our <a href="termsconditions.html" class="tc ">Terms & conditions.</a> <br/><br/>
-        <input type="reset" class="reset">
-        <input type="submit" class="submit">
-        <!--password conditions-->
+    <form class="RegisterForm" action="#" method="post">
+        <h1>Registration Form</h1>
+
+        <div class="form-group">
+            <label for="name">Enter Your Name:</label>
+            <input type="text" class="textbox" id="name" name="name" placeholder="John" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Enter Your Mail:</label>
+            <input type="email" class="textbox" id="email" name="email" placeholder="john@mail.com" required>
+        </div>
+
+        <div class="form-group">
+            <label for="mobile">Enter Your Mobile No.:</label>
+            <input
+                type="tel"
+                class="textbox"
+                id="mobile"
+                name="mobile"
+                pattern="[0-9]{10}"
+                title="Enter a 10 digit mobile number"
+                required
+            >
+        </div>
+
+        <div class="form-group radio-group">
+            <p><strong>Choose Your Gender:</strong></p>
+
+            <input type="radio" name="gender" id="male" value="male" class="radiobtn" required>
+            <label for="male">Male</label>
+
+            <input type="radio" name="gender" id="female" value="female" class="radiobtn">
+            <label for="female">Female</label>
+        </div>
+
+        <div class="form-group">
+            <label for="pass">Enter Your Password:</label>
+            <input type="password" class="pass" id="pass" name="password" minlength="8" maxlength="12" required>
+        </div>
+
+        <div class="form-group">
+            <label for="repass">Re-Enter Your Password:</label>
+            <input type="password" class="pass" id="repass" name="confirmPassword" minlength="8" maxlength="12" required>
+        </div>
+
+        <div class="form-group terms">
+            <input type="checkbox" class="check" id="tc" name="terms" value="accepted" required>
+            <label for="tc">
+                Accept Our <a href="termsconditions.html" class="tc">Terms &amp; Conditions</a>.
+            </label>
+        </div>
+
+        <div class="button-group">
+            <input type="reset" class="reset" value="Reset">
+            <input type="submit" class="submit" value="Submit">
+        </div>
+
         <div class="passwordtc">
-            <h2 label="password cobditions">-:Password Must:-</h2>
+            <h2>Password Must:</h2>
             <ul>
                 <li>
                     <span>✓</span>
-                    Contains 8 to 12 Characters long.
+                    Contain 8 to 12 characters.
                 </li>
                 <li>
                     <span>✓</span>
-                    Contains both lower & uppercase letters.
+                    Contain both lowercase and uppercase letters.
                 </li>
                 <li>
                     <span>✓</span>
@@ -109,11 +193,11 @@
                 </li>
                 <li>
                     <span>✓</span>
-                    Contains 1 special character '!@#$%^&*()+'
+                    Contain 1 special character like !@#$%^&amp;*()+.
                 </li>
                 <li>
                     <span>✓</span>
-                    Not contains letter or number sequences like 'abc' '123' '4444' 'QWERTY'
+                    Not contain letter or number sequences like abc, 123, 4444, or QWERTY.
                 </li>
             </ul>
         </div>
