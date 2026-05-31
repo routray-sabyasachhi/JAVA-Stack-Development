@@ -178,8 +178,8 @@ The `<optgroup>` tag groups related options inside a dropdown.
     <option value="css">CSS</option>
   </optgroup>
   <optgroup label="Backend">
-    <option value="node">Node.js</option>
-    <option value="express">Express.js</option>
+    <option value="java">Java</option>
+    <option value="spring-boot">Spring Boot</option>
   </optgroup>
 </select>
 ```

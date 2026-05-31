@@ -1,6 +1,6 @@
 # JavaScript Learning
 
-JavaScript is the programming language of the MERN stack. Learn it deeply before jumping into React.
+JavaScript is the browser programming language used for interactive frontend development. Learn it deeply before jumping into React.
 
 ## What To Learn
 
@@ -35,4 +35,4 @@ JavaScript is the programming language of the MERN stack. Learn it deeply before
 
 ## Goal
 
-I should be able to build interactive frontend features and understand the JavaScript logic used inside React and Node.js.
+I should be able to build interactive frontend features and understand the JavaScript logic used inside React applications.

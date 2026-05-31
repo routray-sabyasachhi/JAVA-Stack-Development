@@ -1,72 +1,69 @@
-# MERN Stack Development Journey
+# Java Full-Stack Development Journey
 
-This repository is my complete learning workspace for becoming a confident MERN stack full-stack developer.
+This repository is my complete learning workspace for becoming a job-ready Java full-stack developer with system design, AI engineering basics, testing, authentication, deployment, and CLI workflow skills.
 
-MERN means:
+## Final Goal
 
-- **M**ongoDB - database
-- **E**xpress.js - backend framework
-- **R**eact - frontend library
-- **N**ode.js - JavaScript runtime for backend
+I want to become a developer who can:
 
-My goal is to learn step by step, build projects after every major topic, and keep all notes, practice files, and projects organized in one place.
-
-## My Final Goal
-
-I want to become a full-stack developer who can:
-
-- Build complete web applications from scratch.
-- Create responsive frontend designs using HTML, CSS, JavaScript, and React.
-- Build backend APIs using Node.js and Express.js.
-- Store and manage data using MongoDB.
-- Add login, signup, protected routes, and authentication.
-- Connect frontend, backend, and database together.
-- Use Git and GitHub properly.
-- Debug errors and explain my code clearly.
-- Deploy projects online.
-- Prepare for real developer work and interviews.
+- Build frontend applications using HTML, CSS, JavaScript, and React.
+- Build production-style backend APIs using Java and Spring Boot.
+- Design databases using SQL first, and understand NoSQL when needed.
+- Add authentication, authorization, roles, and secure API access.
+- Test backend, frontend, APIs, and full application flows.
+- Deploy full-stack projects using GitHub, Docker, cloud platforms, and CI/CD.
+- Understand system design, architecture, scalability, caching, queues, and monitoring.
+- Use AI tools and AI APIs responsibly inside real applications.
+- Explain projects clearly in interviews and documentation.
 
 ## Folder Structure
 
 ```text
-MERN-Stack-Development/
+JAVA-Stack-Development/
 |-- CLI/
-|   |-- Basic_comands.md
-|   `-- Git_Commands.md
 |-- HTML/
-|   |-- HTML-Basics.md
-|   `-- HTML-Role.md
 |-- CSS/
-|   |-- basic-css.md
-|   |-- basic1-css.css
-|   `-- basic1-css.html
 |-- JavaScript/
-|   `-- README.md
 |-- React/
-|   `-- README.md
-|-- Node-Express/
-|   `-- README.md
-|-- MongoDB/
-|   `-- README.md
+|-- Java/
+|-- DSA/
+|-- Spring-Boot/
+|-- Databases/
 |-- APIs/
-|   `-- README.md
 |-- Authentication/
-|   `-- README.md
+|-- Security/
 |-- Testing/
-|   `-- README.md
+|-- System-Design/
+|-- Architecture/
+|-- AI-Engineering/
 |-- Deployment/
-|   `-- README.md
+|-- DevOps-Cloud/
 |-- Projects/
-|   `-- Project 1 Recipe App/
 |-- Full-Stack-Projects/
-|   `-- README.md
 |-- Interview-Preparation/
-|   `-- README.md
+|-- Documentation/
 |-- Resources/
-|   `-- README.md
 |-- LICENSE
 `-- README.md
 ```
+
+## What To Keep From The Old MERN Structure
+
+Keep these folders because they are still important for Java full-stack development:
+
+- `CLI/` for terminal, Git, GitHub, and developer workflow.
+- `HTML/`, `CSS/`, `JavaScript/`, and `React/` for frontend work.
+- `APIs/` for REST, HTTP, API documentation, Postman, and integration practice.
+- `Authentication/` for login, signup, JWT, sessions, OAuth, and roles.
+- `Testing/` for unit, integration, API, frontend, and deployment testing.
+- `Deployment/` for hosting and release notes.
+- `Projects/` and `Full-Stack-Projects/` for practice and portfolio work.
+- `Interview-Preparation/`, `Documentation/`, and `Resources/` for revision.
+
+Replace these MERN-specific folders:
+
+- `Node-Express/` becomes `Spring-Boot/`.
+- `MongoDB/` becomes `Databases/`.
 
 ## Learning Path
 
@@ -74,459 +71,191 @@ MERN-Stack-Development/
 
 Folder: `CLI/`
 
-What to learn:
-
 - Command line basics
-- Folder navigation
-- File creation and deletion
-- Useful terminal commands
-- Git basics
-- GitHub workflow
-- Commits, branches, merge, pull, and push
+- Git and GitHub
+- Branches, commits, merge, pull, push
+- README writing
+- Basic project organization
 
-Practice:
+### Phase 2: Frontend Foundation
 
-- Use terminal for daily work.
-- Commit every meaningful change.
-- Write clear commit messages.
+Folders: `HTML/`, `CSS/`, `JavaScript/`
 
-Status:
-
-- [x] CLI notes started
-- [x] Git notes started
-- [ ] Daily Git practice
-
-### Phase 2: HTML
-
-Folder: `HTML/`
-
-What to learn:
-
-- HTML document structure
-- Elements and tags
-- Attributes
-- Text tags
-- Lists
-- Links
-- Images
-- Forms
-- Tables
 - Semantic HTML
-- Accessibility basics
-- SEO basics
-
-Practice:
-
-- Build simple web pages.
-- Use semantic tags like `header`, `nav`, `main`, `section`, `article`, and `footer`.
-- Keep HTML clean and meaningful.
-
-Status:
-
-- [x] HTML basics notes
-- [x] HTML role notes
-- [ ] Forms practice
-- [ ] Semantic layout practice
-
-### Phase 3: CSS
-
-Folder: `CSS/`
-
-What to learn:
-
-- CSS syntax
-- Selectors
-- Colors and units
-- Box model
-- Typography
-- Display properties
-- Positioning
-- Flexbox
-- Grid
-- Transitions
-- Animations
-- Media queries
-- Responsive design
-
-Practice:
-
-- Recreate simple layouts.
-- Make mobile-friendly pages.
-- Improve the recipe app design.
-
-Status:
-
-- [x] CSS notes started
-- [x] Basic CSS files created
-- [ ] Responsive layout practice
-- [ ] Flexbox mini project
-- [ ] Grid mini project
-
-### Phase 4: JavaScript
-
-Folder: `JavaScript/`
-
-What to learn:
-
-- Variables and data types
-- Operators
-- Conditions
-- Loops
-- Functions
-- Arrays
-- Objects
-- DOM manipulation
-- Events
 - Forms and validation
-- Fetch API
-- Promises
-- `async` and `await`
-- ES6+ features
+- Responsive CSS
+- Flexbox and Grid
+- JavaScript fundamentals
+- DOM manipulation
+- Fetch API and async programming
 
-Practice projects:
-
-- Counter app
-- Calculator
-- Todo app
-- Form validator
-- Weather app
-- Quiz app
-
-Status:
-
-- [ ] JavaScript basics
-- [ ] DOM projects
-- [ ] API projects
-
-### Phase 5: React
+### Phase 3: React Frontend
 
 Folder: `React/`
 
-What to learn:
-
 - Vite setup
-- Components
-- JSX
-- Props
-- State
-- Events
-- Conditional rendering
-- Lists
-- Forms
-- Hooks
+- Components, props, state, hooks
 - React Router
-- API calls
-- Context API
-- Project structure
+- Forms and validation
+- API integration
+- Protected frontend routes
+- Dashboard and admin UI patterns
 
-Practice projects:
+### Phase 4: Core Java
 
-- React todo app
-- Notes app frontend
-- Recipe search frontend
-- Product listing page
-- Dashboard UI
+Folder: `Java/`
 
-Status:
+- Java syntax and OOP
+- Collections and generics
+- Exceptions
+- Streams and lambdas
+- File handling
+- Maven or Gradle
+- Clean code basics
 
-- [ ] React fundamentals
-- [ ] React Router
-- [ ] API integration
+### Phase 5: DSA And Problem Solving
 
-### Phase 6: APIs
+Folder: `DSA/`
+
+- Arrays, strings, linked lists
+- Stacks, queues, hash maps
+- Trees, graphs, recursion
+- Sorting and searching
+- Time and space complexity
+- Interview problem practice
+
+### Phase 6: Spring Boot Backend
+
+Folder: `Spring-Boot/`
+
+- Spring Boot project setup
+- Controllers, services, repositories
+- DTOs and validation
+- REST APIs
+- Exception handling
+- Spring Data JPA
+- Configuration and profiles
+- Logging
+
+### Phase 7: Databases
+
+Folder: `Databases/`
+
+- SQL basics
+- PostgreSQL or MySQL
+- Tables, relationships, joins
+- Indexes and transactions
+- JPA entity mapping
+- Migrations with Flyway or Liquibase
+- NoSQL basics when needed
+
+### Phase 8: APIs And Integration
 
 Folder: `APIs/`
 
-What to learn:
-
-- What APIs are
-- REST API concepts
-- HTTP methods
-- Status codes
-- Params and query strings
-- Request body
-- Headers
+- REST principles
+- HTTP methods and status codes
+- Request and response design
+- Pagination, filtering, sorting
+- API documentation with OpenAPI/Swagger
 - Postman or Thunder Client
-- API documentation
 
-Practice:
+### Phase 9: Authentication And Security
 
-- Test public APIs.
-- Build a frontend that consumes API data.
-- Document every backend API route.
+Folders: `Authentication/`, `Security/`
 
-Status:
-
-- [ ] REST basics
-- [ ] API testing
-- [ ] API documentation
-
-### Phase 7: Node.js and Express.js
-
-Folder: `Node-Express/`
-
-What to learn:
-
-- Node.js basics
-- npm
-- Express server
-- Routes
-- Controllers
-- Middleware
-- Error handling
-- Environment variables
-- REST API structure
-- MVC pattern
-
-Practice projects:
-
-- Basic server
-- Todo API
-- Notes API
-- Blog API
-- Recipe API
-
-Status:
-
-- [ ] Node.js basics
-- [ ] Express routes
-- [ ] Backend project structure
-
-### Phase 8: MongoDB
-
-Folder: `MongoDB/`
-
-What to learn:
-
-- Database basics
-- MongoDB collections and documents
-- MongoDB Atlas
-- MongoDB Compass
-- Mongoose
-- Schemas and models
-- CRUD operations
-- Relationships
-- Filtering and sorting
-- Pagination
-
-Practice:
-
-- Connect Express app with MongoDB.
-- Store and fetch real project data.
-- Design proper schemas.
-
-Status:
-
-- [ ] MongoDB basics
-- [ ] Mongoose
-- [ ] CRUD with database
-
-### Phase 9: Authentication
-
-Folder: `Authentication/`
-
-What to learn:
-
-- Signup flow
-- Login flow
 - Password hashing
-- JWT
-- Protected routes
-- Auth middleware
-- Frontend auth state
-- Logout
-- Role-based access basics
+- JWT authentication
+- Refresh tokens
+- Role-based access control
+- Spring Security
+- OAuth2 basics
+- CORS, CSRF, rate limiting
+- Secure environment variables
 
-Practice:
-
-- Create a login/signup backend.
-- Protect private pages.
-- Add authentication to notes or blog app.
-
-Status:
-
-- [ ] Signup and login
-- [ ] JWT authentication
-- [ ] Protected routes
-
-### Phase 10: Testing and Debugging
+### Phase 10: Testing
 
 Folder: `Testing/`
 
-What to learn:
-
-- Browser DevTools
-- Console debugging
-- Network debugging
-- React DevTools
+- JUnit
+- Mockito
+- Spring Boot integration tests
 - API testing
-- Backend error debugging
-- Basic test mindset
+- React testing basics
+- Testcontainers basics
+- Debugging and logs
 
-Practice:
+### Phase 11: System Design And Architecture
 
-- Fix broken layouts.
-- Debug failed API calls.
-- Debug backend and database errors.
+Folders: `System-Design/`, `Architecture/`
 
-Status:
+- Client-server architecture
+- Load balancing
+- Caching
+- Database scaling
+- Queues and async processing
+- Monolith vs microservices
+- API gateway basics
+- Observability: logs, metrics, traces
 
-- [ ] Debugging practice
-- [ ] API testing practice
+### Phase 12: AI Engineering
 
-### Phase 11: Deployment
+Folder: `AI-Engineering/`
 
-Folder: `Deployment/`
+- AI API basics
+- Prompting and structured outputs
+- Embeddings and semantic search
+- RAG basics
+- AI feature safety
+- Building AI-assisted app features with Java or backend APIs
 
-What to learn:
+### Phase 13: Deployment And DevOps
 
-- Build command
+Folders: `Deployment/`, `DevOps-Cloud/`
+
+- Build commands
 - Environment variables
-- Frontend deployment
-- Backend deployment
-- MongoDB Atlas deployment
-- CORS setup
-- Production API URLs
-- Logs and basic monitoring
+- Docker basics
+- GitHub Actions
+- CI/CD pipelines
+- Cloud deployment
+- Database deployment
+- Logs, monitoring, rollback basics
 
-Practice:
+### Phase 14: Full-Stack Projects
 
-- Deploy static project.
-- Deploy React frontend.
-- Deploy Express backend.
-- Connect live frontend with live backend.
+Folders: `Projects/`, `Full-Stack-Projects/`
 
-Status:
+Suggested portfolio projects:
 
-- [ ] Frontend deployment
-- [ ] Backend deployment
-- [ ] Full-stack deployment
-
-### Phase 12: Full-Stack Projects
-
-Folder: `Full-Stack-Projects/`
-
-Projects to build:
-
-- Full-stack todo app
+- Recipe app upgraded to React and Spring Boot
 - Notes app with login
-- Blog app
-- Recipe app with search and saved recipes
+- Blog platform with admin panel
 - Expense tracker
 - E-commerce product app
-- Admin dashboard
+- Job application tracker
+- AI document Q&A app
+- System-design case study project
 
 Each full-stack project should include:
 
 - Frontend
-- Backend
-- MongoDB database
+- Spring Boot backend
+- Database
 - Authentication when needed
-- README file
-- Screenshots
-- Live link
-
-Status:
-
-- [ ] First full-stack MERN app
-- [ ] Authentication project
-- [ ] Deployed MERN project
-
-## Current Project
-
-### Project 1: Agni-Cook Recipe App
-
-Folder: `Projects/Project 1 Recipe App/`
-
-This is my first HTML and CSS project.
-
-Current features:
-
-- Header
-- Logo
-- Navigation
-- Recipe cards
-- Images
-- Footer
-- External CSS
-
-Next improvements:
-
-- Add recipe detail pages.
-- Improve mobile responsive design.
-- Add more recipe cards.
-- Improve spacing, colors, and typography.
-- Add JavaScript search after learning DOM.
-- Later convert it into a React project.
-- Later connect it with backend and MongoDB.
+- Tests
+- Deployment notes
+- README with screenshots and API documentation
 
 ## Daily Practice Plan
 
-Use this simple routine:
-
-1. Learn one small topic.
+1. Learn one focused topic.
 2. Write notes in the correct folder.
 3. Practice with code.
 4. Build or improve a mini project.
-5. Commit changes with Git.
-6. Review what was learned.
-
-## Weekly Goal
-
-Every week I should complete:
-
-- 3 to 5 learning notes
-- 1 mini practice project or feature
-- Regular Git commits
-- One revision session
-- One improvement to an old project
-
-## Rules For This Journey
-
-- Learn in order, but keep building projects.
-- Do not only watch tutorials.
-- Write code by hand.
-- Break big topics into small parts.
-- Read errors carefully.
-- Keep folder names clean.
-- Write README files for projects.
-- Push progress regularly.
-- Build real projects, not only notes.
-
-## Interview Preparation
-
-Folder: `Interview-Preparation/`
-
-When the basics are stronger, I will add:
-
-- HTML questions
-- CSS questions
-- JavaScript questions
-- React questions
-- Node.js questions
-- Express.js questions
-- MongoDB questions
-- Git questions
-- Project explanations
-- Resume points
-
-## Resources
-
-Folder: `Resources/`
-
-This folder will store:
-
-- Useful links
-- Cheat sheets
-- Setup notes
-- Error solutions
-- Deployment notes
-- Revision plans
+5. Commit meaningful changes.
+6. Review and explain what was learned.
 
 ## Final Vision
 
-This repository is my proof of progress.
-
-I started with basic files, but this workspace is now organized for the full journey: foundations, frontend, backend, database, authentication, deployment, full-stack projects, and interview preparation.
-
-The final goal is to become job-ready in MERN stack development by learning consistently and building real projects.
+This repository is now organized for a full Java developer journey: frontend, Java, Spring Boot, databases, authentication, testing, deployment, system design, AI engineering, and interview preparation.

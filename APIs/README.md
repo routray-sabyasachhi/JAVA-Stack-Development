@@ -1,32 +1,28 @@
-# APIs Learning
+# APIs
 
-APIs connect frontend, backend, and external services together.
+This folder is for learning how frontend, backend, external services, and AI tools communicate.
 
 ## What To Learn
 
-- What an API is
 - REST API concepts
-- HTTP methods: GET, POST, PUT, PATCH, DELETE
+- HTTP methods
 - Status codes
-- Request body
-- Query parameters
-- Route parameters
 - Headers
+- Request body
+- Path variables and query parameters
+- Pagination, filtering, and sorting
+- API versioning basics
+- Error response design
+- Swagger/OpenAPI documentation
 - Postman or Thunder Client
-- API testing
-- API documentation
-- Fetch API from frontend
-- Axios basics
-- Error responses
 
-## Practice Projects
+## Practice
 
-- Public API weather app
-- GitHub profile finder
-- Recipe API frontend
-- Notes REST API
-- Blog REST API
+- Test public APIs.
+- Document every Spring Boot API route.
+- Connect React frontend to Spring Boot APIs.
+- Create reusable API response formats.
 
 ## Goal
 
-I should understand how data moves between frontend, backend, database, and third-party services.
+I should be able to design, test, document, and consume APIs clearly.

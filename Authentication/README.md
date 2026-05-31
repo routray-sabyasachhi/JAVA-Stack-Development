@@ -1,28 +1,35 @@
-# Authentication Learning
+# Authentication
 
-Authentication teaches how users sign up, log in, and access protected pages.
+This folder is for login, signup, authorization, and secure user access.
 
 ## What To Learn
 
 - Signup and login flow
-- Password hashing with bcrypt
-- JWT basics
-- Access tokens
-- Protected routes
-- Auth middleware
-- Storing current user data
+- Password hashing with BCrypt
+- JWT access tokens
+- Refresh tokens
+- Role-based access control
+- Protected backend routes
+- Protected frontend routes
 - Logout flow
-- Frontend auth state
-- Role-based access basics
-- Security basics
+- OAuth2 basics
+- Session vs token authentication
+- Secure cookies basics
 
-## Practice Projects
+## Java Tools
 
-- Signup and login API
-- Protected dashboard
-- Notes app with user login
-- Blog app with author login
+- Spring Security
+- JWT libraries
+- OAuth2 client support
+- Method-level authorization
+
+## Practice
+
+- Build a signup and login API.
+- Add roles such as `USER` and `ADMIN`.
+- Protect React routes.
+- Add authentication to a notes or blog project.
 
 ## Goal
 
-I should be able to build secure user authentication in a full-stack MERN app.
+I should be able to add secure authentication to full-stack Java applications.

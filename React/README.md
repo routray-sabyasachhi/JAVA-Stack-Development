@@ -1,6 +1,6 @@
 # React Learning
 
-React is the frontend library used in the MERN stack to build user interfaces.
+React is the frontend library used to build modern user interfaces for full-stack applications.
 
 ## What To Learn
 

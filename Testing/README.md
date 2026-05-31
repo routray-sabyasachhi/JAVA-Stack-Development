@@ -1,28 +1,29 @@
-# Testing and Debugging
+# Testing
 
-Testing and debugging help me build applications with confidence.
+This folder is for testing and debugging full-stack Java applications.
 
 ## What To Learn
 
-- Reading error messages
-- Browser DevTools
-- Console debugging
-- Network tab debugging
-- React DevTools
-- API testing with Postman or Thunder Client
-- Basic unit testing idea
-- Backend endpoint testing
-- Manual test checklist
-- Common MERN bugs
+- Test mindset and test cases
+- JUnit
+- Mockito
+- Spring Boot integration tests
+- MockMvc
+- Repository tests
+- API testing with Postman
+- React component testing basics
+- End-to-end testing basics
+- Testcontainers basics
+- Debugging with logs and breakpoints
 
-## Practice Tasks
+## Practice
 
-- Debug broken HTML/CSS layout
-- Debug JavaScript event code
-- Debug failed API call
-- Debug backend route error
-- Debug MongoDB connection issue
+- Write unit tests for services.
+- Write integration tests for controllers.
+- Test authentication flows.
+- Test API error cases.
+- Test important frontend user flows.
 
 ## Goal
 
-I should be able to find problems calmly, test my work, and fix issues step by step.
+I should be able to prove that core application behavior works before deployment.

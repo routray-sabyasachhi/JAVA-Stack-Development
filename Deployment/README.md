@@ -1,27 +1,28 @@
-# Deployment Learning
+# Deployment
 
-Deployment means putting projects online so other people can use them.
+This folder is for releasing full-stack applications.
 
 ## What To Learn
 
-- Build process
+- Production builds
 - Environment variables
-- Deploy React frontend
-- Deploy Express backend
-- Deploy MongoDB Atlas database
+- Frontend deployment
+- Spring Boot backend deployment
+- Database deployment
 - CORS setup
-- Production API URL
-- GitHub repository setup
-- README and project documentation
-- Basic monitoring and logs
+- Docker basics
+- Logs and monitoring basics
+- Rollback basics
+- Domain and HTTPS basics
 
-## Platforms To Learn
+## Practice
 
-- GitHub Pages for simple static sites
-- Netlify or Vercel for frontend
-- Render or Railway for backend
-- MongoDB Atlas for database
+- Deploy a static frontend.
+- Deploy a React app.
+- Deploy a Spring Boot API.
+- Connect frontend, backend, and database in production.
+- Write deployment notes for every full-stack project.
 
 ## Goal
 
-I should be able to deploy full-stack MERN applications and share live project links.
+I should be able to make projects live and explain how they run in production.

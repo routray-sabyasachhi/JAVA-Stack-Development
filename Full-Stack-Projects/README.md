@@ -1,28 +1,31 @@
 # Full-Stack Projects
 
-This folder is for complete MERN applications that combine frontend, backend, database, authentication, and deployment.
+This folder is for complete portfolio projects using React, Spring Boot, and a database.
 
-## Project Order
+## Project Requirements
 
-1. Full-stack todo app
-2. Notes app with authentication
-3. Blog app
-4. Recipe app with search and saved recipes
-5. Expense tracker
-6. E-commerce product app
-7. Admin dashboard
+Each project should include:
 
-## Each Project Should Include
-
-- Project README
-- Frontend folder
-- Backend folder
-- Database models
-- API routes
-- Environment variable example
+- Frontend
+- Spring Boot backend
+- SQL database
+- Authentication when needed
+- API documentation
+- Tests for important behavior
+- Deployment notes
 - Screenshots
-- Live link after deployment
+- Clear README
+
+## Project Ideas
+
+- Notes app with login
+- Blog platform with admin dashboard
+- Expense tracker
+- E-commerce product and order app
+- Job application tracker
+- Recipe app with saved recipes
+- AI document Q&A app
 
 ## Goal
 
-I should build projects that prove I can work like a full-stack developer.
+I should build projects that prove real full-stack ability, not only isolated notes.

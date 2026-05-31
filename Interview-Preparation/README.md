@@ -8,9 +8,12 @@ This folder is for revision, questions, and job-ready preparation.
 - CSS interview questions
 - JavaScript interview questions
 - React interview questions
-- Node.js interview questions
-- Express.js interview questions
-- MongoDB interview questions
+- Java interview questions
+- Spring Boot interview questions
+- SQL and database interview questions
+- Authentication and security questions
+- Testing questions
+- System design questions
 - Git questions
 - HTTP and API questions
 - Project explanations
@@ -18,13 +21,14 @@ This folder is for revision, questions, and job-ready preparation.
 
 ## Coding Practice
 
-- JavaScript problem solving
-- Array methods practice
-- String problems
-- Object problems
-- DOM tasks
+- Java DSA problem solving
+- Arrays and strings
+- Hash maps and sets
+- Recursion basics
+- SQL query practice
 - Small React tasks
+- Spring Boot API explanations
 
 ## Goal
 
-I should be able to explain my projects, answer fundamentals clearly, and solve beginner-to-intermediate coding tasks.
+I should be able to explain my projects, answer fundamentals clearly, solve coding tasks, and discuss basic system design choices.
