@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fundamentals</title>
+    <style>
+        * {
+            background-color: blanchedalmond;
+        }
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            display: flex;
+        }
+        .item-card {
+            max-width: 300px;
+            overflow-wrap: break-word;
+            border: 3px solid black;
+            border-radius: 30px;
+            padding: 18px;
+            margin: auto;
+            margin-top: 45%;
+            text-align: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .item-card:hover {
+            transform: scale(1.05);
+            box-shadow:
+        0 0 20px rgba(255, 0, 255, 0.6),
+        0 0 40px rgba(255, 255, 0, 0.4);
+        }
+        h3 {
+            font-weight: bold;
+            font-size: 120%;
+            color:rgb(106, 0, 255);
+        }
+        img {
+            width: 30%;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Fundamentals of Div element -->
+     <div class="item-card">
+        <h3>HTML</h3>
+        <img src="../tech-icons/HTML5.png" alt="text if img not loaded" />
+        <p>short description <span>read more</span></p>
+     </div>
+</body>
+</html>
