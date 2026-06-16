@@ -260,6 +260,10 @@ Folder: `UGC-NET-CSE/`
 
 This folder supports the long-term UGC NET Computer Science and JRF preparation goal.
 
+Main planning file:
+
+- `UGC-NET-JRF-CS-Subject-Map-And-Plan.md`
+
 Subjects included:
 
 - Discrete Mathematics
