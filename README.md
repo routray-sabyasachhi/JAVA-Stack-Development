@@ -40,9 +40,15 @@ JAVA-Stack-Development/
 |-- DevOps-Cloud/
 |-- Projects/
 |-- Full-Stack-Projects/
+|   |-- Beginner/
+|   |-- Intermediate/
+|   `-- Advanced/
+|-- UGC-NET-CSE/
 |-- Interview-Preparation/
 |-- Documentation/
+|-- Books/
 |-- Resources/
+|-- tech-icons/
 |-- LICENSE
 `-- README.md
 ```
@@ -56,8 +62,9 @@ Keep these folders because they are still important for Java full-stack developm
 - `APIs/` for REST, HTTP, API documentation, Postman, and integration practice.
 - `Authentication/` for login, signup, JWT, sessions, OAuth, and roles.
 - `Testing/` for unit, integration, API, frontend, and deployment testing.
-- `Deployment/` for hosting and release notes.
+- `Deployment/` and `DevOps-Cloud/` for hosting, Docker, CI/CD, cloud, and release notes.
 - `Projects/` and `Full-Stack-Projects/` for practice and portfolio work.
+- `UGC-NET-CSE/` for the long-term JRF and UGC NET Computer Science goal.
 - `Interview-Preparation/`, `Documentation/`, and `Resources/` for revision.
 
 Replace these MERN-specific folders:
@@ -226,26 +233,49 @@ Folders: `Deployment/`, `DevOps-Cloud/`
 
 Folders: `Projects/`, `Full-Stack-Projects/`
 
-Suggested portfolio projects:
+The `Full-Stack-Projects/` folder contains a structured project bank with 300 project ideas:
 
-- Recipe app upgraded to React and Spring Boot
-- Notes app with login
-- Blog platform with admin panel
-- Expense tracker
-- E-commerce product app
-- Job application tracker
-- AI document Q&A app
-- System-design case study project
+- `Beginner/`: 100 Java full-stack project folders named `B001ProjectName` to `B100ProjectName`
+- `Intermediate/`: 100 Java full-stack project folders named `I001ProjectName` to `I100ProjectName`
+- `Advanced/`: 100 Java full-stack project folders named `A001ProjectName` to `A100ProjectName`
 
-Each full-stack project should include:
+Each project folder contains a matching numbered Markdown synopsis file, such as `B001PersonalPortfolio.md`, covering:
 
-- Frontend
-- Spring Boot backend
-- Database
-- Authentication when needed
-- Tests
-- Deployment notes
-- README with screenshots and API documentation
+- Synopsis and purpose
+- What to build
+- Why the project matters
+- Technology used
+- Core features
+- Suggested database entities
+- API ideas
+- Testing plan
+- Deployment plan
+- Learning outcomes
+
+These projects are designed to grow progressively from simple CRUD applications to production-style platforms using HTML, CSS, JavaScript, React, Java, Spring Boot, SQL, authentication, REST APIs, testing, deployment, system design, and AI integration where appropriate.
+
+### Phase 15: UGC NET CSE And JRF Preparation
+
+Folder: `UGC-NET-CSE/`
+
+This folder supports the long-term UGC NET Computer Science and JRF preparation goal.
+
+Subjects included:
+
+- Discrete Mathematics
+- Digital Logic
+- Computer Organization and Architecture
+- Algorithms
+- Theory of Computation
+- Compiler Design
+- Operating Systems
+- DBMS
+- Computer Networks
+- AI
+- System Software and Software Engineering
+- Web Technologies
+- Computer Graphics
+- Notes
 
 ## Daily Practice Plan
 
@@ -258,4 +288,4 @@ Each full-stack project should include:
 
 ## Final Vision
 
-This repository is now organized for a full Java developer journey: frontend, Java, Spring Boot, databases, authentication, testing, deployment, system design, AI engineering, and interview preparation.
+This repository is now organized for a complete Java developer journey: frontend, Java, Spring Boot, databases, authentication, testing, deployment, system design, AI engineering, portfolio projects, UGC NET CSE preparation, and interview readiness.
