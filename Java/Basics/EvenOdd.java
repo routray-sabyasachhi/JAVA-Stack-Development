@@ -18,7 +18,10 @@ public class EvenOdd {
         MyFunction check = new MyFunction();
 
         System.out.print("enter a number to check (Even/ Odd) : ");
+        
         int number = sc.nextInt();
+        sc.close();   // resourse management
+
         boolean res = check.checkOddEven(number);
 
         // This is for user friendlyness

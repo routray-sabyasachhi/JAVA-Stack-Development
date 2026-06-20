@@ -24,6 +24,8 @@ public class DivisibleBy5 {
         System.out.print("Enter positive integer to check, Is it divisible by 5(Yes/No) ? ");
         int number = sc.nextInt();
 
+        sc.close();   // resourse management
+
         // user defined class making (here we can write but for practice we make user defined function inde user defined class)
         MyDivisibility self = new MyDivisibility(number);
 
