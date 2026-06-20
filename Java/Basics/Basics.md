@@ -1,6 +1,6 @@
 # Java Basics
 
-This file is a step-by-step beginner guide for Java. It starts from installing the JDK and ends with writing, compiling, running, and understanding basic Java programs.
+This file is a step-by-step beginner guide for Java. It starts from installing the JDK and continues through writing, compiling, running, variables, data types, ASCII basics, type casting, operators, BODMAS, input, control statements, arrays, strings, methods, constructors, object references, and beginner practice programs.
 
 ## 1. What Is Java?
 
@@ -392,6 +392,43 @@ public class VariableExample {
 }
 ```
 
+Variable scope:
+
+Scope means where a variable can be used.
+
+A variable created inside a block `{}` can be used only inside that block.
+
+Example:
+
+```java
+public class ScopeExample {
+    public static void main(String[] args) {
+        int x = 10;
+
+        if (x > 5) {
+            int y = 20;
+            System.out.println(y);
+        }
+
+        System.out.println(x);
+        // System.out.println(y); // error: y is outside its scope
+    }
+}
+```
+
+Literals:
+
+A literal is a fixed value written directly in the program.
+
+| Literal type | Example |
+| --- | --- |
+| Integer literal | `100` |
+| Decimal literal | `10.5` |
+| Character literal | `'A'` |
+| String literal | `"Java"` |
+| Boolean literal | `true` |
+| Null literal | `null` |
+
 ## 14. Data Types
 
 Java data types are mainly divided into two groups:
@@ -441,6 +478,50 @@ Example:
 ```java
 char grade = 'A';
 String name = "Sabyasachi";
+```
+
+ASCII coding basics:
+
+ASCII is a character coding system where characters have numeric values.
+
+For example, uppercase `A` has ASCII value `65`, lowercase `a` has ASCII value `97`, and digit character `0` has ASCII value `48`.
+
+Java `char` stores Unicode characters, but the common English letters and digits match ASCII values.
+
+Useful ASCII techniques:
+
+Convert `char` to number code:
+
+```java
+char ch = 'A';
+int code = ch;
+System.out.println(code); // 65
+```
+
+Convert number code to `char`:
+
+```java
+int code = 66;
+char ch = (char) code;
+System.out.println(ch); // B
+```
+
+Convert digit character to integer:
+
+```java
+char digit = '7';
+int number = digit - '0';
+System.out.println(number); // 7
+```
+
+Check character type:
+
+```java
+char ch = 'A';
+
+System.out.println(Character.isLetter(ch));
+System.out.println(Character.isDigit(ch));
+System.out.println(Character.isUpperCase(ch));
 ```
 
 ## 15. Constants
@@ -513,12 +594,22 @@ Type casting means converting one data type to another.
 
 Widening casting happens automatically when converting a smaller type to a larger type.
 
+This is also called implicit casting.
+
 ```java
 int x = 10;
 double y = x;
 ```
 
+Flow:
+
+```text
+byte -> short -> int -> long -> float -> double
+```
+
 Narrowing casting must be done manually because data may be lost.
+
+This is also called explicit casting.
 
 ```java
 double price = 99.99;
@@ -526,6 +617,47 @@ int value = (int) price;
 ```
 
 Output value becomes `99`.
+
+Important type casting examples:
+
+```java
+int a = 10;
+int b = 3;
+
+double result1 = a / b;
+double result2 = (double) a / b;
+
+System.out.println(result1); // 3.0
+System.out.println(result2); // 3.3333333333333335
+```
+
+Why?
+
+`a / b` happens as integer division first.
+
+`(double) a / b` converts `a` to `double`, so decimal division happens.
+
+Casting with `char`:
+
+```java
+char ch = 'A';
+int code = ch;
+
+int nextCode = code + 1;
+char nextChar = (char) nextCode;
+
+System.out.println(code);     // 65
+System.out.println(nextChar); // B
+```
+
+Be careful:
+
+```java
+int big = 130;
+byte small = (byte) big;
+
+System.out.println(small); // value changes because byte range is limited
+```
 
 ## 19. Operators
 
@@ -751,6 +883,51 @@ Use parentheses when you want clarity:
 
 ```java
 int result = (10 + 5) * 2;
+```
+
+BODMAS in Java:
+
+BODMAS means:
+
+```text
+B - Brackets
+O - Orders/powers
+D - Division
+M - Multiplication
+A - Addition
+S - Subtraction
+```
+
+Java follows operator precedence, which is similar to BODMAS for arithmetic.
+
+Important difference:
+
+Java does not have a power operator like `^` for powers. In Java, `^` is bitwise XOR.
+
+Use `Math.pow()` for powers:
+
+```java
+double power = Math.pow(2, 3);
+System.out.println(power); // 8.0
+```
+
+When operators have the same priority, Java usually evaluates left to right.
+
+Example:
+
+```java
+int result = 20 / 5 * 2;
+System.out.println(result); // 8
+```
+
+Here division and multiplication have the same priority, so Java solves from left to right.
+
+Best practice:
+
+Use parentheses to make the calculation easy to understand.
+
+```java
+int result = ((10 + 5) * 2) - 4;
 ```
 
 ## 28. Taking Input From User
@@ -1360,7 +1537,140 @@ They make programs organized.
 
 They make code easier to test.
 
-## 46. Simple Area Of Circle Program
+## 46. Constructor Basic Idea
+
+A constructor is a special block that runs automatically when an object is created.
+
+It is used to give initial values to an object.
+
+Before constructor, remember:
+
+A class is a blueprint.
+
+An object is a real instance created from that class.
+
+Example:
+
+```text
+Class: Student
+Objects: student1, student2, student3
+```
+
+Important rules:
+
+The constructor name must be the same as the class name.
+
+A constructor has no return type, not even `void`.
+
+It runs when you use `new`.
+
+Example:
+
+```java
+class Student {
+    String name;
+    int age;
+
+    Student(String studentName, int studentAge) {
+        name = studentName;
+        age = studentAge;
+    }
+
+    void display() {
+        System.out.println(name);
+        System.out.println(age);
+    }
+}
+
+public class ConstructorExample {
+    public static void main(String[] args) {
+        Student s1 = new Student("Rahul", 20);
+        s1.display();
+    }
+}
+```
+
+Meaning:
+
+`Student s1` creates a reference variable.
+
+`new Student("Rahul", 20)` creates an object.
+
+`Student(String studentName, int studentAge)` is the constructor.
+
+Default constructor:
+
+If you do not write any constructor, Java gives a default constructor automatically.
+
+```java
+class Demo {
+    Demo() {
+        System.out.println("Constructor called");
+    }
+}
+```
+
+## 47. Object Reference And Removing Objects
+
+In Java, you cannot directly destroy or kill an object from memory.
+
+Java has garbage collection. The garbage collector removes objects automatically when they are no longer reachable.
+
+Simple object reference:
+
+```java
+Student s1 = new Student("Rahul", 20);
+```
+
+Here:
+
+`new Student("Rahul", 20)` creates the object.
+
+`s1` stores the reference to that object.
+
+Remove one object reference:
+
+```java
+s1 = null;
+```
+
+Now `s1` does not point to the object. If no other reference points to that object, it becomes eligible for garbage collection.
+
+Remove object at a specific array position:
+
+```java
+Student[] students = new Student[3];
+
+students[0] = new Student("Amit", 18);
+students[1] = new Student("Neha", 19);
+students[2] = new Student("Ravi", 20);
+
+students[1] = null; // remove object reference at index 1
+```
+
+Remove object at a specific `ArrayList` position:
+
+```java
+import java.util.ArrayList;
+
+ArrayList<Student> students = new ArrayList<>();
+
+students.add(new Student("Amit", 18));
+students.add(new Student("Neha", 19));
+students.add(new Student("Ravi", 20));
+
+students.remove(1); // removes object reference at index 1
+```
+
+Important:
+
+`null` removes a reference, not the object directly.
+
+`remove(index)` removes an element from a list and shifts later elements left.
+
+Garbage collection timing is controlled by the JVM, not by the programmer.
+
+## 48. Simple Area Of Circle Program
 
 Example:
 
@@ -1389,7 +1699,7 @@ Formula:
 area = pi * radius * radius
 ```
 
-## 47. Common Beginner Errors
+## 49. Common Beginner Errors
 
 Missing semicolon:
 
@@ -1441,7 +1751,37 @@ Correct:
 import java.util.Scanner;
 ```
 
-## 48. Complete Beginner Practice Program
+Null pointer error:
+
+```java
+String name = null;
+System.out.println(name.length());
+```
+
+This causes `NullPointerException` because `name` does not point to a real String object.
+
+Correct:
+
+```java
+String name = "Java";
+System.out.println(name.length());
+```
+
+Using `^` for power:
+
+```java
+int result = 2 ^ 3;
+```
+
+This is not power in Java. It is bitwise XOR.
+
+Correct:
+
+```java
+double result = Math.pow(2, 3);
+```
+
+## 50. Complete Beginner Practice Program
 
 This program uses input, variables, operators, if else, and output.
 
@@ -1478,7 +1818,36 @@ public class StudentResult {
 }
 ```
 
-## 49. Recommended Learning Sequence
+## 51. Practice Programs In This Folder
+
+After learning the basics, open the Java files in this folder and run them one by one.
+
+| File | What it practices |
+| --- | --- |
+| `Test.java` | First Java class and `main` method |
+| `PrintNumber.java` | Printing simple output |
+| `Variable.java` | Variables and data types |
+| `Operator.java` | Basic operators |
+| `TakeInput.java` | Taking input using `Scanner` |
+| `AreaOfCircle.java` | Formula, input, and decimal calculation |
+| `EvenOdd.java` | Checking even and odd numbers |
+| `CheckInteger.java` | Checking positive, negative, or zero |
+| `DivisibleBy5.java` | Divisibility using modulus |
+| `AbsoluteValue.java` | Using `Math.abs()` |
+| `SideOfTriangles.java` | Conditional logic with triangle sides |
+| `ProfitLoss.java` | Profit/loss amount and percentage calculation |
+| `CheckPrime.java` | Prime number logic using loops |
+| `CheckArmstrong.java` | Armstrong number logic using digits and powers |
+
+Recommended practice order:
+
+1. Run the file and observe the output.
+2. Read the code line by line.
+3. Change one input or condition.
+4. Run it again and compare the output.
+5. Rewrite the same program without looking.
+
+## 52. Recommended Learning Sequence
 
 Follow this order:
 
@@ -1497,9 +1866,11 @@ Follow this order:
 13. Learn loops: `for`, `while`, `do while`.
 14. Learn `break`, `continue`, and `return`.
 15. Learn arrays and strings.
-16. Practice small programs daily.
+16. Learn methods, constructors, and objects.
+17. Learn how object references become eligible for garbage collection.
+18. Practice small programs daily.
 
-## 50. Small Practice Questions
+## 53. Small Practice Questions
 
 1. Print your name, age, and city.
 2. Take two numbers from the user and print their sum.
@@ -1511,8 +1882,12 @@ Follow this order:
 8. Print multiplication table of a number.
 9. Find largest of three numbers.
 10. Take marks and print grade.
+11. Print ASCII value of a character.
+12. Convert a digit character like `'8'` into integer `8`.
+13. Create a `Student` class with a constructor and display method.
+14. Store three `Student` objects in an array and set one index to `null`.
 
-## 51. Final Mini Revision
+## 54. Final Mini Revision
 
 Java source file extension is `.java`.
 
@@ -1536,3 +1911,6 @@ Scanner takes input.
 
 Control statements control program flow.
 
+Constructors initialize objects.
+
+Java does not directly kill objects; unreachable objects are cleaned by garbage collection.
