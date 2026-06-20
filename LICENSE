@@ -1,101 +1,122 @@
-SABYASACHHI JAVA FULL-STACK LEARNING WORKSPACE LICENSE
-Version 1.0 - 2026
+# Sabyasachhi Java Full-Stack Learning Workspace License
 
-Copyright (c) 2026 Sabyasachhi Routray
+**Version:** 1.0  
+**Year:** 2026  
+**Owner:** Sabyasachhi Routray  
+**Repository:** Java Full-Stack Development Journey
 
-This license applies to the learning notes, code examples, project ideas,
-documentation, exercises, and repository structure contained in this project,
-unless a file, folder, asset, dependency, or third-party resource states a
-different license.
+---
 
-1. Purpose
+## 1. About This License
 
-This repository is shared as a personal learning workspace for Java full-stack
-development, including frontend fundamentals, Java, Spring Boot, databases,
-APIs, authentication, testing, deployment, system design, AI engineering, and
-portfolio project practice.
+This license applies to the original learning notes, code examples, project
+ideas, documentation, exercises, folder structure, and educational roadmap in
+this repository, unless a specific file, folder, dependency, image, icon, or
+third-party asset states a different license.
 
-The intention is to help learners study, practice, build, revise, and prepare
-for real software development work while respecting the effort that went into
-organizing and writing this material.
+This repository is created as a personal learning workspace for becoming a
+job-ready Java full-stack developer. It includes frontend fundamentals, Java,
+Spring Boot, databases, APIs, authentication, security, testing, deployment,
+system design, AI engineering, interview preparation, and portfolio projects.
 
-2. Permissions
+---
 
-You may:
+## 2. What You Can Do
 
-- Read, download, copy, and use this repository for personal learning.
-- Modify the code examples, notes, and project ideas for your own practice.
-- Build personal, academic, or portfolio projects based on the examples and
-  project prompts in this repository.
-- Share small excerpts for teaching, discussion, review, or explanation, as
-  long as credit is given.
-- Fork the repository for learning purposes, provided that this license and
-  attribution are kept.
+You are allowed to:
 
-3. Attribution
+- Read, download, fork, and copy this repository for personal learning.
+- Modify the notes, examples, and project ideas for your own practice.
+- Build personal, academic, or portfolio projects based on this material.
+- Share small excerpts for teaching, discussion, review, or explanation.
+- Use the code samples as learning references in your own projects.
 
-If you publicly share a project, article, tutorial, video, fork, or derivative
-work that substantially uses this repository, include reasonable credit such as:
+When you publicly share work that substantially uses this repository, please
+give reasonable credit:
 
-Based on "Java Full-Stack Development Journey" by Sabyasachhi Routray.
+> Based on "Java Full-Stack Development Journey" by Sabyasachhi Routray.
 
-Attribution does not mean the original author endorses your work, product,
-course, service, or organization.
+---
 
-4. Restrictions
+## 3. What You Cannot Do
 
-You may not:
+You are not allowed to:
 
-- Sell this repository, its notes, project bank, folder structure, or a lightly
-  modified copy as a course, book, template pack, paid download, or commercial
-  product without prior written permission.
-- Claim the original learning roadmap, notes, project prompts, or repository
-  organization as your own original work.
-- Remove copyright notices, attribution notices, or this license from shared
-  copies or forks.
-- Use this repository to create misleading credentials, fake project ownership,
-  copied portfolio claims, or deceptive interview submissions.
-- Use the material in a way that violates applicable law, privacy, platform
-  rules, or academic integrity policies.
+- Sell this repository, its project bank, notes, roadmap, or lightly modified
+  copies as a course, book, template pack, paid download, or commercial product
+  without written permission.
+- Claim the original roadmap, notes, project ideas, or repository organization
+  as your own original work.
+- Remove this license, copyright notice, or attribution from public copies.
+- Use this material to create fake project ownership, misleading portfolio
+  claims, copied interview submissions, or dishonest academic work.
+- Use this repository in a way that violates law, privacy, platform rules, or
+  academic integrity policies.
 
-5. Code Samples And Practice Projects
+---
 
-Code written in this repository is provided for learning and experimentation.
-You may reuse code snippets and practice implementations in your own personal,
-academic, or portfolio projects.
+## 4. Practice Code And Projects
 
-If you turn a practice project into a production application, you are
-responsible for reviewing security, licensing, dependencies, correctness,
-accessibility, privacy, deployment configuration, and maintenance.
+The code in this repository is written for learning and experimentation.
 
-6. Third-Party Materials
+You may reuse snippets and practice implementations in personal, academic, or
+portfolio projects. If you turn any practice code into a production
+application, you are responsible for reviewing:
 
-Some folders may contain images, icons, references, dependencies, or other
-third-party materials. Those items remain under their original licenses and
-terms. This license does not grant rights that the repository owner does not
-have.
+- Security
+- Dependencies and licenses
+- Correctness
+- Accessibility
+- Privacy
+- Deployment configuration
+- Maintenance
 
-7. No Warranty
+---
 
-The repository is provided "as is", without warranty of any kind, express or
-implied, including but not limited to warranties of merchantability, fitness
-for a particular purpose, non-infringement, accuracy, completeness, or security.
+
+## 6. Attribution Does Not Mean Endorsement
+
+Attribution only gives credit to the original repository. It does not mean that
+Sabyasachhi Routray endorses your project, product, course, service, company,
+content, or organization.
+
+---
+
+## 7. No Warranty
+
+This repository is provided **"as is"**, without warranty of any kind, express
+or implied.
+
+The author does not guarantee accuracy, completeness, security, interview
+success, academic success, job placement, production readiness, or fitness for a
+particular purpose.
 
 The author is not responsible for errors, omissions, data loss, failed builds,
-security issues, interview outcomes, academic results, deployment costs, or any
-other damages arising from use of this repository.
+security issues, deployment costs, third-party claims, or any damages arising
+from the use of this repository.
 
-8. Permission Requests
+---
+
+## 8. Permission Requests
 
 For uses outside this license, including commercial redistribution, paid course
 use, book use, corporate training use, or publishing a substantial copy of the
-project bank, request permission from the copyright holder.
+project bank, request written permission from the copyright holder.
 
-9. License Changes
+---
+
+## 9. Future License Updates
 
 Future versions of this repository may be released under updated terms. Copies
 already received under this version may continue to be used under this version,
 unless a separate written agreement says otherwise.
 
-By using, copying, modifying, or sharing this repository, you agree to follow
-the terms of this license.
+---
+
+## 10. Agreement
+
+By using, copying, modifying, forking, or sharing this repository, you agree to
+follow the terms of this license.
+
+Copyright (c) 2026 Sabyasachhi Routray.
+
