@@ -11,6 +11,7 @@ public class ArrayCreation {
 
         Scanner sc = new Scanner(System.in);
         int size = sc.nextInt();
+        sc.close();
         int[] arr2 = new int[size];  // size must be defined
 
         // we can take input for array elements separately or in loop method(preferred)
