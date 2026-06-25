@@ -43,19 +43,15 @@ JAVA-Stack-Development/
 |   |-- Beginner/
 |   |-- Intermediate/
 |   `-- Advanced/
-|-- UGC-NET-CSE/
 |-- Interview-Preparation/
 |-- Documentation/
 |-- Books/
 |-- Resources/
-|-- tech-icons/
 |-- LICENSE
 `-- README.md
 ```
 
-## What To Keep From The Old MERN Structure
-
-Keep these folders because they are still important for Java full-stack development:
+## Keep these folders because these are important for Java full-stack development:
 
 - `CLI/` for terminal, Git, GitHub, and developer workflow.
 - `HTML/`, `CSS/`, `JavaScript/`, and `React/` for frontend work.
@@ -66,11 +62,6 @@ Keep these folders because they are still important for Java full-stack developm
 - `Projects/` and `Full-Stack-Projects/` for practice and portfolio work.
 - `UGC-NET-CSE/` for the long-term JRF and UGC NET Computer Science goal.
 - `Interview-Preparation/`, `Documentation/`, and `Resources/` for revision.
-
-Replace these MERN-specific folders:
-
-- `Node-Express/` becomes `Spring-Boot/`.
-- `MongoDB/` becomes `Databases/`.
 
 ## Learning Path
 
