@@ -1,6 +1,6 @@
 package Java.Array.Array_Search_Techniques;
 
-import java.util.Scanner;
+import java.util.Scanner; 
 
 public class LinearSearch {
     public static void main(String[] args) {
