@@ -1,4 +1,4 @@
-package Java.Array;
+package Java.Array.Basics;
 
 public class FindSmallestElement {
     public static void main(String[] args) {

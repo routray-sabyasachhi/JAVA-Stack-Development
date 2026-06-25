@@ -1,4 +1,4 @@
-package Java.Array;
+package Java.Array.Basics;
 
 public class CountEvenOddInArray {
     public static void main(String[] args) {
