@@ -1,4 +1,4 @@
-package Java.Array.Array_Search;
+package Java.Array.Array_Search_Techniques;
 
 import java.util.Scanner;
 
