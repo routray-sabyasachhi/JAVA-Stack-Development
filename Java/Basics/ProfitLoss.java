@@ -20,10 +20,10 @@ public class ProfitLoss {
 // Profit & Loss Calculation
 class ProfitLossCalculator {
 
-    private double amount;
-    private double percentage;
-    private double buyingPrice;
-    private double sellingPrice;
+    public double amount;
+    public double percentage;
+    public double buyingPrice;
+    public double sellingPrice;
 
     public ProfitLossCalculator(double buyingPrice, double sellingPrice) {
         this.buyingPrice = buyingPrice;
@@ -54,21 +54,22 @@ class ProfitLossCalculator {
 // Taking input from user
 class TakeInput {
 
-    private double buyingPrice;
-    private double sellingPrice;
+    public double buyingPrice;
+    public double sellingPrice;
 
     public TakeInput() {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter Buying Price : ");
-        buyingPrice = sc.nextDouble();
+        buyingPrice = readPrice(sc, "Enter Buying Price : ");
+        sellingPrice = readPrice(sc, "Enter Selling Price : ");
 
-        System.out.print("Enter Selling Price : ");
-        sellingPrice = sc.nextDouble();
-
-        // Do not close System.in scanner in practice programs
         sc.close();
+    }
+
+    private double readPrice(Scanner sc, String message) {
+        System.out.print(message);
+        return Double.parseDouble(sc.nextLine().replace("\uFEFF", "").trim());
     }
 
     public double getBuyingPrice() {
