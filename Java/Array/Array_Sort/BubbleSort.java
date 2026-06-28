@@ -1,4 +1,4 @@
-//package Java.Array.Array_Sort;
+package Java.Array.Array_Sort;
 
 public class BubbleSort {
     public static void main(String[] args) {
