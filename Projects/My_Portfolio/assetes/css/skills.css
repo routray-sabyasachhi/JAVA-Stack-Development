@@ -1,0 +1,318 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: #07162f;
+    height: 100vh;
+    display: flex;
+    margin: 0;
+    padding: 15px;
+    gap: 15px;
+    overflow: hidden;
+}
+
+.sidebar {
+    flex: 0 0 280px;
+    flex-shrink: 0;
+    height: calc(100vh - 30px);
+    overflow: hidden;
+    background: #050d1f;
+    border-radius: 30px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.logo img {
+    width: 100px;
+    border-radius: 50%;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+nav ul li {
+    margin-bottom: 8px;
+}
+nav ul li .skills {
+    background: linear-gradient(90deg, rgba(37,99,235,.9), rgba(59,130,246,.3));
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 16px;
+    border-radius: 14px;
+    transition: .3s;
+    font-size: 17px;
+    width: 100%;
+}
+nav ul li:hover {
+    background: rgba(2, 57, 106, 0.845);
+    color: #33aaff;
+    border-radius: 14px;
+    transform: translateX(3px);
+}
+nav ul li:active a {
+    background: linear-gradient(90deg, rgba(37,99,235,.9), rgba(59,130,246,.3));
+}
+
+.right-by {
+    color: white;
+    margin: 1px;
+    text-align: center
+}
+
+.copy-by {
+    color: white;
+    padding-bottom: 2px;
+    text-align: center;
+}
+h4 {
+    margin-top: 0px;
+    color: rgb(40, 233, 194);
+    text-align: center;
+    font-size: 3vh;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+.social-icons a {
+    color: #2ea3ec;
+    font-size: 110%;
+    text-decoration: none;
+    padding: 5px;
+    gap: 30px;
+    flex-direction: row;
+    transition: .3s;
+    margin: 1.5vh;
+    justify-content: center;
+    flex-shrink: space-around;
+    overflow:hidden;
+}
+.social-icons a:hover .fa-github{
+    color: white;
+    transform: translateY(-2px);
+}
+.social-icons a:hover .fa-linkedin{
+    color: white;
+    transform: translateY(-2px);
+}
+.social-icons a:hover .fa-x{
+    color: white;
+    transform: translateY(-2px);
+}
+.social-icons a:hover .fa-google{
+    color: white;
+    transform: translateY(-2px);
+}
+.hero{
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    height: calc(100vh - 30px);
+    max-height: calc(100vh - 30px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    background: #050d1f;
+    border-radius: 30px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.hero-topbar {
+    display: flex;
+    color: white;
+    font-size: 45px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-shadow: 15px rgba(255, 255, 255, 0.9);
+}
+
+.hero .hero-topbar .sk {
+    color:rgb(173, 255, 47);
+    font-size: 50px;
+    margin-right: 10px;
+    text-shadow: 5px 5px 6px rgba(152, 227, 40, 0.9);
+}
+.hero .hero-topbar .tech {
+    color: rgb(238, 130, 238);
+    font-size: 50px;
+    margin-left: 10px;
+    text-shadow: 5px 5px 6px rgba(238, 130, 238, 0.9);
+}
+
+/* technology card */
+
+.technology{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.technology .tech-header {
+    background:
+        linear-gradient(160deg, rgba(56, 189, 248, .18), transparent 42%),
+        linear-gradient(340deg, rgba(217, 70, 239, .18), transparent 46%),
+        rgba(255, 255, 255, .045);
+    margin: 10px;
+    min-width: 250px;
+    border: 2px solid rgba(2, 57, 106, 0.845);
+    border-radius: 15px;
+    transition: .3s ease;
+}
+.technology .tech-header .logo-img {
+    color: white;
+    font-size: 25px;
+     background:
+        linear-gradient(160deg, rgba(56, 189, 248, .18), transparent 42%),
+        linear-gradient(340deg, rgba(217, 70, 239, .18), transparent 46%),
+        rgba(255, 255, 255, .045);
+     display:flex;
+     padding: 10px;
+     margin-top:3px;
+     margin-left: 10px;
+     margin-right:10px;
+     margin-bottom: 7px;;
+     border-radius: 15px;
+}
+.technology .tech-header .logo-img img{
+    background-color: #07162f;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    font-size: 25px;
+    margin-right: 15px;
+}
+.technology .tech-header .fa-tools{
+    background-color: #07162f;
+    color:#2ea3ec;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    font-size: 25px;
+    margin-right: 15px;
+}
+.technology .tech-header .fa-github {
+     background-color: #07162f;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    font-size: 25px;
+    margin-left: 15px;
+}
+.technology .tech-header .fa-sitemap{
+    background-color: #07162f;
+    color:#2ea3ec;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    font-size: 25px;
+    margin-right: 15px;
+}
+.technology .tech-header .fa-lock {
+    color: rgb(21, 232, 21);
+    padding-right: 8px;
+}
+
+.technology .tech-header .fa-brain {
+    color:rgb(255, 242, 4);
+    padding-right: 8px;
+}
+.technology .tech-header .type {
+    display:flex;
+    color: white;
+    margin:10px;
+}
+.technology .tech-header .type img {
+    height: 35px;
+    width: 35px;
+    margin-right: 15px;
+}
+
+.technology .tech-header .type ul li {
+    font-size: 18px;
+    margin: 4px;
+    padding: 4px;
+}
+
+.technology .tech-header:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 10px 10px 10px rgba(169, 134, 234, 0.4);
+}
+.my-mission {
+    background: linear-gradient(160deg, rgba(56, 189, 248, .18), transparent 42%),
+        linear-gradient(340deg, rgba(217, 70, 239, .18), transparent 46%),
+        rgba(255, 255, 255, .045);
+        padding-bottom: 25px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 20px;
+        padding: flex;
+}
+.my-mission  h2 .fa-bullseye {
+    color: rgb(186, 67, 255);
+    text-align: center;
+    font-size: 3rem;
+}
+.my-mission  h2 {
+    color: rgb(186, 67, 255);
+    text-align: center;
+    font-size: 3rem;
+}
+.my-mission div  {
+    font-size: 20px;
+    color: white;
+    padding: 8px;
+    margin-right: 40px;
+}
+.my-mission div span {
+    color: rgb(186, 67, 255);
+}
+
+.my-mission div div img {
+    background-color: white;
+    padding:14px;
+    border: 2px solid rgb(255, 0, 149);
+    border-radius: 50%;
+    margin: 40px;
+}
+.my-mission div div .fa-tools {
+    padding: 10px;
+    background-color: white;
+    color: rgb(148, 16, 250);
+    font-size: 60px;
+    border-radius: 50%;
+    margin: 40px;
+    border: 2px solid rgb(255, 0, 149);
+}
+.my-mission div div .fa-rocket {
+    padding:10px;
+    background-color: white;
+    color: rgb(148, 16, 250);
+    font-size: 60px;
+    border-radius: 50%;
+    margin: 40px;
+    border: 2px solid rgb(255, 0, 149);
+}
+.my-mission div div .improve {
+    font-size: 60px;
+    background-color: white;
+    border: 2px solid rgb(255, 0, 149);
+}
