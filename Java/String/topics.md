@@ -1,58 +1,5 @@
 📚 Java Strings Complete Roadmap
-🟡 Module 2: String Methods
-length()
-charAt()
-substring()
-contains()
-indexOf()
-lastIndexOf()
-startsWith()
-endsWith()
-equals()
-equalsIgnoreCase()
-compareTo()
-compareToIgnoreCase()
-concat()
-replace()
-replaceAll()
-replaceFirst()
-split()
-join()
-trim()
-strip()
-repeat()
-isEmpty()
-isBlank()
-toUpperCase()
-toLowerCase()
-toCharArray()
-valueOf()
-format()
 
-≈ 28 methods
-
-🟠 Module 3: StringBuilder
-What is StringBuilder?
-Why use it?
-Mutable vs Immutable
-append()
-insert()
-delete()
-deleteCharAt()
-replace()
-reverse()
-capacity()
-ensureCapacity()
-setLength()
-setCharAt()
-🔵 Module 4: StringBuffer
-What is StringBuffer?
-Thread safety
-Difference from StringBuilder
-Performance comparison
-🟣 Module 5: Important Interview Concepts
-String Pool
-Heap Memory
 Garbage Collection (basic relation to Strings)
 hashCode()
 Why String is final
