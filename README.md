@@ -16,40 +16,6 @@ I want to become a developer who can:
 - Use AI tools and AI APIs responsibly inside real applications.
 - Explain projects clearly in interviews and documentation.
 
-## Folder Structure
-
-```text
-JAVA-Stack-Development/
-|-- CLI/
-|-- HTML/
-|-- CSS/
-|-- JavaScript/
-|-- React/
-|-- Java/
-|-- DSA/
-|-- Spring-Boot/
-|-- Databases/
-|-- APIs/
-|-- Authentication/
-|-- Security/
-|-- Testing/
-|-- System-Design/
-|-- Architecture/
-|-- AI-Engineering/
-|-- Deployment/
-|-- DevOps-Cloud/
-|-- Projects/
-|-- Full-Stack-Projects/
-|   |-- Beginner/
-|   |-- Intermediate/
-|   `-- Advanced/
-|-- Interview-Preparation/
-|-- Documentation/
-|-- Books/
-|-- Resources/
-|-- LICENSE
-`-- README.md
-```
 
 ## Keep these folders because these are important for Java full-stack development:
 
