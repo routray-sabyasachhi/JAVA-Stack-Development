@@ -8,26 +8,35 @@ class Product{
     private int stock;
 
     public String setProductDetail(int takeId, String takeName, double takePrice, int takeStock) {
-        if(takeId > 0)
-            this.productId = takeId;
-        else
-            return "Invalid product Id";
 
-        if(takeName.trim().isEmpty())
-            return "Invalid product name";
-        else
-            this.productName = takeName;
-        
-        if((takeStock <= 0) && (takePrice <= 0)){
-            return "Product detail Can't be saved. Please, Try again...";
-        }else{
-            this.stock = takeStock;
-            this.price = takePrice;
-        }
-
-        //Give message to user
-        return "Product detail saved Successfully...";
+    // Validate Product ID
+    if (takeId <= 0) {
+        return "Invalid Product ID.";
     }
+
+    // Validate Product Name
+    if (takeName == null || takeName.trim().isEmpty()) {
+        return "Invalid Product Name.";
+    }
+
+    // Validate Price
+    if (takePrice <= 0) {
+        return "Invalid Product Price.";
+    }
+
+    // Validate Stock
+    if (takeStock <= 0) {
+        return "Invalid Stock Quantity.";
+    }
+
+    // Assign values only after all validations pass
+    this.productId = takeId;
+    this.productName = takeName;
+    this.price = takePrice;
+    this.stock = takeStock;
+
+    return "Product details saved successfully.";
+}
 
     public void updatePrice(double newPrice){
         // update price
