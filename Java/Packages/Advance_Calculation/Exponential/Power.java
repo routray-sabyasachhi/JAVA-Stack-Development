@@ -1,7 +1,8 @@
 package Java.Packages.Advance_Calculation.Exponential;
 
 public class Power {
-    public static void myPower(double x, double y){
-        System.out.println(Math.abs(Math.pow(x, y)));
+    // Calculates firstNumber raised to the power secondNumber.
+    public static double myPower(double firstNumber, double secondNumber) {
+        return Math.pow(firstNumber, secondNumber);
     }
 }
