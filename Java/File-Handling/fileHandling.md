@@ -803,6 +803,832 @@ It is cleaner and more powerful than older `File`-based APIs in many situations.
 
 ---
 
+## 16. Path Handling in Real Projects
+
+In small examples, we often write paths like `"data.txt"`. In real projects, path handling needs more care because the program may run from different folders, operating systems, or deployment environments.
+
+### Current working directory
+The current working directory is the folder from which the Java program is started.
+
+```java
+public class WorkingDirectoryDemo {
+    public static void main(String[] args) {
+        System.out.println(System.getProperty("user.dir"));
+    }
+}
+```
+
+If your file path is relative, Java starts looking from this location.
+
+### Building paths safely
+Avoid manually joining path parts with `/` or `\`. Use `Path.resolve()`.
+
+```java
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+public class PathResolveDemo {
+    public static void main(String[] args) {
+        Path project = Paths.get(System.getProperty("user.dir"));
+        Path file = project.resolve("data").resolve("students.txt");
+
+        System.out.println(file);
+    }
+}
+```
+
+### Normalizing paths
+Normalization removes unnecessary parts such as `.` and `..`.
+
+```java
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+public class NormalizePathDemo {
+    public static void main(String[] args) {
+        Path path = Paths.get("data/../reports/./result.txt");
+        System.out.println(path.normalize());
+    }
+}
+```
+
+### Comparing `File` and `Path`
+
+| Feature | `java.io.File` | `java.nio.file.Path` |
+|---|---|---|
+| Introduced | Older Java API | Modern Java API |
+| Main use | File path and metadata | File path with powerful operations |
+| Works with | `FileReader`, `FileWriter`, streams | `Files`, NIO utilities |
+| Recommended for new code | Less preferred | More preferred |
+
+### Teacher's note
+For old syllabus questions, learn `File`. For modern Java development, become comfortable with `Path` and `Files`.
+
+If you are using Java 8, replace `Path.of("file.txt")` with `Paths.get("file.txt")` in the examples.
+
+---
+
+## 17. File Open Modes
+
+When writing to a file, Java can either overwrite existing content or append new content.
+
+### Overwrite mode
+This replaces old content.
+
+```java
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class OverwriteDemo {
+    public static void main(String[] args) {
+        try (FileWriter writer = new FileWriter("notes.txt")) {
+            writer.write("This replaces old content.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Append mode
+This adds new content at the end.
+
+```java
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class AppendDemo {
+    public static void main(String[] args) {
+        try (FileWriter writer = new FileWriter("notes.txt", true)) {
+            writer.write("\nThis line is added later.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### NIO open options
+With NIO, you can clearly specify how a file should be opened.
+
+```java
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
+
+public class NioOpenOptionDemo {
+    public static void main(String[] args) throws Exception {
+        Path path = Path.of("log.txt");
+
+        Files.writeString(
+            path,
+            "Application started\n",
+            StandardOpenOption.CREATE,
+            StandardOpenOption.APPEND
+        );
+    }
+}
+```
+
+### Common open options
+
+| Option | Meaning |
+|---|---|
+| `CREATE` | Create file if it does not exist |
+| `CREATE_NEW` | Create file only if it does not already exist |
+| `APPEND` | Add content to the end |
+| `TRUNCATE_EXISTING` | Clear existing content before writing |
+| `READ` | Open file for reading |
+| `WRITE` | Open file for writing |
+
+---
+
+## 18. Working with Large Files
+
+Small files can be read fully into memory. Large files should usually be processed line by line or in chunks.
+
+### Avoid this for huge files
+
+```java
+String content = Files.readString(Path.of("big-file.txt"));
+```
+
+This loads the entire file into memory. It is fine for small files, but risky for very large files.
+
+### Better: read line by line
+
+```java
+import java.io.BufferedReader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+public class LargeFileReadDemo {
+    public static void main(String[] args) throws Exception {
+        Path path = Path.of("server.log");
+
+        try (BufferedReader reader = Files.newBufferedReader(path)) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (line.contains("ERROR")) {
+                    System.out.println(line);
+                }
+            }
+        }
+    }
+}
+```
+
+### Reading bytes in chunks
+Use this style for binary files such as images, videos, or PDFs.
+
+```java
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+public class ChunkReadDemo {
+    public static void main(String[] args) throws Exception {
+        Path path = Path.of("video.mp4");
+        byte[] buffer = new byte[8192];
+
+        try (InputStream input = Files.newInputStream(path)) {
+            int bytesRead;
+            while ((bytesRead = input.read(buffer)) != -1) {
+                System.out.println("Read bytes: " + bytesRead);
+            }
+        }
+    }
+}
+```
+
+### Practical rule
+- Use `readString()` for small text files.
+- Use `BufferedReader` for large text files.
+- Use byte streams with a buffer for large binary files.
+
+---
+
+## 19. CSV File Handling
+
+CSV means Comma-Separated Values. It is commonly used to store table-like data.
+
+Example file:
+
+```text
+id,name,marks
+1,Alice,87
+2,Bob,75
+3,Charlie,91
+```
+
+### Simple CSV reading
+
+```java
+import java.io.BufferedReader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+public class CsvReadDemo {
+    public static void main(String[] args) throws Exception {
+        Path path = Path.of("students.csv");
+
+        try (BufferedReader reader = Files.newBufferedReader(path)) {
+            String line = reader.readLine(); // skip header
+
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+
+                int id = Integer.parseInt(parts[0]);
+                String name = parts[1];
+                int marks = Integer.parseInt(parts[2]);
+
+                System.out.println(id + " " + name + " " + marks);
+            }
+        }
+    }
+}
+```
+
+### Writing CSV data
+
+```java
+import java.io.BufferedWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+public class CsvWriteDemo {
+    public static void main(String[] args) throws Exception {
+        Path path = Path.of("students.csv");
+
+        try (BufferedWriter writer = Files.newBufferedWriter(path)) {
+            writer.write("id,name,marks");
+            writer.newLine();
+            writer.write("1,Alice,87");
+            writer.newLine();
+            writer.write("2,Bob,75");
+        }
+    }
+}
+```
+
+### Important warning
+Simple `split(",")` works only for basic CSV files. Real CSV data may contain commas inside quotes, such as `"New Delhi, India"`. For professional projects, use a CSV library such as OpenCSV or Apache Commons CSV.
+
+---
+
+## 20. Properties Files
+
+Properties files store key-value pairs and are often used for configuration.
+
+Example:
+
+```properties
+app.name=Student Management
+app.version=1.0
+database.url=jdbc:mysql://localhost:3306/school
+```
+
+### Reading a properties file
+
+```java
+import java.io.FileInputStream;
+import java.util.Properties;
+
+public class PropertiesReadDemo {
+    public static void main(String[] args) throws Exception {
+        Properties props = new Properties();
+
+        try (FileInputStream input = new FileInputStream("app.properties")) {
+            props.load(input);
+        }
+
+        System.out.println(props.getProperty("app.name"));
+        System.out.println(props.getProperty("database.url"));
+    }
+}
+```
+
+### Writing a properties file
+
+```java
+import java.io.FileOutputStream;
+import java.util.Properties;
+
+public class PropertiesWriteDemo {
+    public static void main(String[] args) throws Exception {
+        Properties props = new Properties();
+        props.setProperty("theme", "dark");
+        props.setProperty("language", "en");
+
+        try (FileOutputStream output = new FileOutputStream("settings.properties")) {
+            props.store(output, "User Settings");
+        }
+    }
+}
+```
+
+### Why properties files matter
+They allow you to change program settings without changing Java code.
+
+---
+
+## 21. Log File Handling
+
+Logs are files that record what happened inside an application.
+
+### Simple log writer
+
+```java
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
+import java.time.LocalDateTime;
+
+public class SimpleLoggerDemo {
+    public static void main(String[] args) throws Exception {
+        Path logFile = Path.of("application.log");
+        String message = LocalDateTime.now() + " - Application started\n";
+
+        Files.writeString(
+            logFile,
+            message,
+            StandardOpenOption.CREATE,
+            StandardOpenOption.APPEND
+        );
+    }
+}
+```
+
+### Reading only error lines
+
+```java
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+public class LogSearchDemo {
+    public static void main(String[] args) throws Exception {
+        Path path = Path.of("application.log");
+
+        try (var lines = Files.lines(path)) {
+            lines.filter(line -> line.contains("ERROR"))
+                 .forEach(System.out::println);
+        }
+    }
+}
+```
+
+### Real-world note
+Professional Java applications usually use logging frameworks such as Logback, Log4j2, or `java.util.logging`. Still, understanding file writing helps you understand how logs are stored.
+
+---
+
+## 22. Temporary Files and Cleanup
+
+Temporary files are useful when you need short-lived storage.
+
+### Creating a temporary file
+
+```java
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+public class TempFileDemo {
+    public static void main(String[] args) throws Exception {
+        Path temp = Files.createTempFile("upload-", ".tmp");
+        Files.writeString(temp, "Temporary data");
+
+        System.out.println(temp);
+    }
+}
+```
+
+### Creating a temporary directory
+
+```java
+Path tempDir = Files.createTempDirectory("work-");
+System.out.println(tempDir);
+```
+
+### Deleting on JVM exit
+
+```java
+import java.io.File;
+
+public class DeleteOnExitDemo {
+    public static void main(String[] args) throws Exception {
+        File temp = File.createTempFile("demo-", ".txt");
+        temp.deleteOnExit();
+    }
+}
+```
+
+### Best practice
+Temporary files should be deleted when they are no longer needed. Long-running applications should clean them manually instead of relying only on `deleteOnExit()`.
+
+---
+
+## 23. File Locking
+
+File locking helps prevent multiple programs from writing to the same file at the same time.
+
+```java
+import java.io.RandomAccessFile;
+import java.nio.channels.FileChannel;
+import java.nio.channels.FileLock;
+
+public class FileLockDemo {
+    public static void main(String[] args) throws Exception {
+        try (RandomAccessFile file = new RandomAccessFile("shared.txt", "rw");
+             FileChannel channel = file.getChannel();
+             FileLock lock = channel.lock()) {
+
+            file.writeUTF("Safe write with lock");
+        }
+    }
+}
+```
+
+### When locking is useful
+- shared files
+- report generation
+- background jobs
+- programs that may run multiple instances
+
+### Important note
+File locking behavior can vary by operating system. Use it carefully and test on the target system.
+
+---
+
+## 24. WatchService: Monitoring Folder Changes
+
+`WatchService` allows Java to watch a directory for changes such as file creation, modification, or deletion.
+
+```java
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.nio.file.StandardWatchEventKinds;
+import java.nio.file.WatchEvent;
+import java.nio.file.WatchKey;
+import java.nio.file.WatchService;
+
+public class WatchServiceDemo {
+    public static void main(String[] args) throws Exception {
+        WatchService watchService = FileSystems.getDefault().newWatchService();
+        Path folder = Path.of("watched");
+
+        folder.register(
+            watchService,
+            StandardWatchEventKinds.ENTRY_CREATE,
+            StandardWatchEventKinds.ENTRY_MODIFY,
+            StandardWatchEventKinds.ENTRY_DELETE
+        );
+
+        while (true) {
+            WatchKey key = watchService.take();
+
+            for (WatchEvent<?> event : key.pollEvents()) {
+                System.out.println(event.kind() + " " + event.context());
+            }
+
+            boolean valid = key.reset();
+            if (!valid) {
+                break;
+            }
+        }
+    }
+}
+```
+
+### Real-world uses
+- auto-reloading configuration
+- detecting uploaded files
+- monitoring log folders
+- triggering background processing
+
+---
+
+## 25. Walking Files with `FileVisitor`
+
+`Files.walk()` is simple, but `FileVisitor` gives more control.
+
+```java
+import java.io.IOException;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
+
+public class FileVisitorDemo {
+    public static void main(String[] args) throws Exception {
+        Path start = Path.of(".");
+
+        Files.walkFileTree(start, new SimpleFileVisitor<Path>() {
+            @Override
+            public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
+                if (file.toString().endsWith(".java")) {
+                    System.out.println(file);
+                }
+                return FileVisitResult.CONTINUE;
+            }
+
+            @Override
+            public FileVisitResult visitFileFailed(Path file, IOException exc) {
+                System.out.println("Cannot access: " + file);
+                return FileVisitResult.CONTINUE;
+            }
+        });
+    }
+}
+```
+
+### Why use `FileVisitor`
+It is useful when you need to handle errors, skip folders, count files, delete directory trees, or process files conditionally.
+
+---
+
+## 26. Safe File Deletion
+
+Deleting files is simple, but deleting safely requires checks.
+
+### Delete one file
+
+```java
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+public class SafeDeleteDemo {
+    public static void main(String[] args) throws Exception {
+        Path path = Path.of("old-report.txt");
+
+        if (Files.exists(path) && Files.isRegularFile(path)) {
+            Files.delete(path);
+            System.out.println("Deleted");
+        } else {
+            System.out.println("File does not exist");
+        }
+    }
+}
+```
+
+### Delete if exists
+
+```java
+Files.deleteIfExists(Path.of("old-report.txt"));
+```
+
+### Safety checklist before deleting
+- Is this path inside the expected folder?
+- Is it a file or a directory?
+- Does the program have permission?
+- Should the file be backed up first?
+- Is the path coming from user input?
+
+---
+
+## 27. Security in File Handling
+
+File handling becomes dangerous when users can control file paths.
+
+### Path traversal problem
+A malicious user may try to access files outside the allowed folder.
+
+```text
+../../secret.txt
+```
+
+### Safer path validation
+
+```java
+import java.nio.file.Path;
+
+public class SafePathDemo {
+    public static void main(String[] args) {
+        Path baseDir = Path.of("uploads").toAbsolutePath().normalize();
+        String userInput = "../secret.txt";
+
+        Path target = baseDir.resolve(userInput).normalize();
+
+        if (!target.startsWith(baseDir)) {
+            throw new IllegalArgumentException("Invalid file path");
+        }
+
+        System.out.println("Safe path: " + target);
+    }
+}
+```
+
+### Security rules
+- Never directly trust file paths from users.
+- Restrict file access to a known base directory.
+- Validate file extensions.
+- Avoid exposing absolute paths in error messages.
+- Be careful when extracting ZIP files.
+- Do not deserialize untrusted data.
+
+---
+
+## 28. File Handling with Collections
+
+Many programs read file data into collections, process it, and then write it back.
+
+### Reading names into a list
+
+```java
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
+
+public class ListReadDemo {
+    public static void main(String[] args) throws Exception {
+        List<String> names = Files.readAllLines(Path.of("names.txt"));
+
+        for (String name : names) {
+            System.out.println(name.toUpperCase());
+        }
+    }
+}
+```
+
+### Sorting and writing back
+
+```java
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Collections;
+import java.util.List;
+
+public class SortFileDemo {
+    public static void main(String[] args) throws Exception {
+        Path path = Path.of("names.txt");
+        List<String> names = Files.readAllLines(path);
+
+        Collections.sort(names);
+
+        Files.write(path, names);
+    }
+}
+```
+
+### Counting word frequency
+
+```java
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.Map;
+
+public class WordCountDemo {
+    public static void main(String[] args) throws Exception {
+        Map<String, Integer> frequency = new HashMap<>();
+
+        for (String line : Files.readAllLines(Path.of("story.txt"))) {
+            String[] words = line.toLowerCase().split("\\W+");
+
+            for (String word : words) {
+                if (!word.isBlank()) {
+                    frequency.put(word, frequency.getOrDefault(word, 0) + 1);
+                }
+            }
+        }
+
+        System.out.println(frequency);
+    }
+}
+```
+
+---
+
+## 29. Common Mistakes
+
+### Mistake 1: Forgetting to close resources
+This can cause memory leaks or locked files.
+
+Correct approach:
+
+```java
+try (BufferedReader reader = Files.newBufferedReader(Path.of("data.txt"))) {
+    System.out.println(reader.readLine());
+}
+```
+
+### Mistake 2: Reading binary files as text
+Images, PDFs, videos, and ZIP files should be handled with byte streams.
+
+### Mistake 3: Loading huge files fully into memory
+Prefer streaming or buffered reading for large files.
+
+### Mistake 4: Ignoring character encoding
+If your file contains non-English text, wrong encoding can corrupt the output.
+
+```java
+Files.writeString(Path.of("data.txt"), "Hello", java.nio.charset.StandardCharsets.UTF_8);
+```
+
+### Mistake 5: Assuming paths work on every operating system
+Use `Path`, `Paths`, and `resolve()` instead of hard-coded separators.
+
+### Mistake 6: Swallowing exceptions
+Avoid empty catch blocks.
+
+```java
+try {
+    Files.delete(Path.of("old.txt"));
+} catch (IOException e) {
+    System.out.println("Could not delete file: " + e.getMessage());
+}
+```
+
+---
+
+## 30. Interview and Exam Points
+
+### Important questions
+- What is file handling?
+- What is the difference between a file and a directory?
+- What is the difference between absolute and relative paths?
+- What is the difference between byte streams and character streams?
+- Why are buffered streams faster?
+- What is serialization?
+- What is the use of `transient`?
+- What is `serialVersionUID`?
+- What is the difference between `File` and `Files`?
+- Why is `try-with-resources` useful?
+- How do you read a large file efficiently?
+- How do you append data to a file?
+- How do you copy a file in Java?
+- How do you prevent path traversal attacks?
+
+### Short answers
+
+| Question | Short answer |
+|---|---|
+| Best class for modern file operations? | `Files` |
+| Best object for representing paths? | `Path` |
+| Best stream for binary files? | `FileInputStream` / `FileOutputStream` |
+| Best classes for text line reading? | `BufferedReader` or `Files.newBufferedReader()` |
+| Best way to close files? | `try-with-resources` |
+| Best encoding for most text files? | UTF-8 |
+
+---
+
+## 31. Mini Projects for Practice
+
+### Project 1: Student Marks File
+Create a program that:
+- writes student names and marks to a CSV file
+- reads the CSV file
+- calculates average marks
+- prints the topper
+
+### Project 2: Notes App
+Create a command-line notes app that:
+- creates a notes folder
+- lets the user add a note
+- lists all notes
+- opens a selected note
+- deletes a selected note
+
+### Project 3: Log Analyzer
+Create a program that:
+- reads a log file
+- counts `INFO`, `WARN`, and `ERROR` lines
+- writes a summary report
+- prints the most recent error
+
+### Project 4: Folder Cleaner
+Create a program that:
+- scans a folder
+- finds files older than a given number of days
+- asks for confirmation
+- deletes or moves them to an archive folder
+
+### Project 5: File Backup Tool
+Create a program that:
+- copies all `.txt` files from one folder to another
+- creates the destination folder if needed
+- skips files that already exist
+- writes a backup log
+
+---
+
+## 32. Recommended Learning Order
+
+If you are studying file handling for the first time, follow this path:
+
+1. Understand files, directories, and paths.
+2. Practice `File` class methods.
+3. Read and write text using `FileReader` and `FileWriter`.
+4. Use `BufferedReader` and `BufferedWriter`.
+5. Learn byte streams for binary files.
+6. Use `try-with-resources` everywhere.
+7. Move to modern NIO: `Path` and `Files`.
+8. Practice CSV and properties files.
+9. Learn serialization only after basic streams are clear.
+10. Study security and large-file handling.
+
+---
+
 ## Quick Summary
 
 If you remember just a few ideas, remember these:
@@ -814,6 +1640,9 @@ If you remember just a few ideas, remember these:
 - `Scanner` is great for parsing input, while `BufferedReader` is great for efficient reading.
 - NIO is the modern file API.
 - Always handle exceptions and close resources properly.
+- Use explicit encoding such as UTF-8 for text files.
+- Do not load huge files fully into memory.
+- Validate user-supplied paths before reading, writing, or deleting files.
 
 ---
 
@@ -841,10 +1670,20 @@ When you understand these basics, file handling becomes one of the easiest and m
 
 ---
 
-## Additional Study Resources
+## Extra Practice Checklist
 
-You can use these companion files for deeper practice and review:
+Use this checklist after completing the notes:
 
-- [fileHandling_study_note.md](fileHandling_study_note.md) — polished study notes with headings and diagrams
-- [fileHandling_classroom_notes.md](fileHandling_classroom_notes.md) — classroom-style notes for revision
-- [fileHandling_practice_sheet.md](fileHandling_practice_sheet.md) — interview questions and coding exercises
+- create a folder using Java
+- create a text file inside that folder
+- write five lines into the file
+- read the file line by line
+- append one more line
+- copy the file to another folder
+- rename the copied file
+- print file size and last modified time
+- read a CSV file into objects
+- write application settings into a properties file
+- search a log file for error lines
+- validate a user-given path before opening it
+- delete a file only after checking that it exists
