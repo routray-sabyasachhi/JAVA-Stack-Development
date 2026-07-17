@@ -1,0 +1,1 @@
+Byte streams work with raw bytes. They are used for binary data such as images, audio, video, PDFs, and ZIP files.
