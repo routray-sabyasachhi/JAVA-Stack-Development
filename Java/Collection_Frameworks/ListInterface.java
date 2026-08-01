@@ -28,5 +28,9 @@ public class ListInterface {
         names.remove(2);
         System.out.println(names.get(2));
         System.out.println(names.getClass());
+
+        // new adding functions
+        names.add(1, "ajay");
+        System.out.println(names);
     }
 }
