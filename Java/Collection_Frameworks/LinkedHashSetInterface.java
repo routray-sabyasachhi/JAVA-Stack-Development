@@ -18,5 +18,9 @@ public class LinkedHashSetInterface {
         System.out.println("After adding 85: " + set);
         set.hashCode();
         System.out.println("Hash code of the LinkedHashSet: " + set.hashCode());
+        /* how hashcode is calculated
+         * The hash code of a LinkedHashSet is calculated based on the hash codes of its elements and their order.
+         *example: 31 * 1 + 31 * 2 + 31 * 3 = 124
+         */
     }
 }
